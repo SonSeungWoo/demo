@@ -8,7 +8,7 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 @Configuration
 public class CustomRequestMappingHandlerMapping {
     @Bean
-    public WebMvcRegistrations webMvcRegistrationsHandlerMapping() {
+    public WebMvcRegistrations webMvcRegistrations() {
         return new WebMvcRegistrations() {
             @Override
             public RequestMappingHandlerMapping getRequestMappingHandlerMapping() {
