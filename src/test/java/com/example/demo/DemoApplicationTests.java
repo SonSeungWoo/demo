@@ -53,26 +53,13 @@ public class DemoApplicationTests {
         consumer.accept("Hello");
     }
 
-
     /**
-     * 월요일 기준 주차 계산
-     */
-    @Test
-    public void getMonDayWeek(){
-        LocalDate now = LocalDate.of(2019, 11, 15);
-        LocalDate startMonday = now.with(DayOfWeek.MONDAY);
-        int weekNo = ((startMonday.getDayOfMonth()-1) / 7) +1;
-        System.out.println(weekNo);
-    }
-
-    /**
-     * 1일기준 주차계산
+     * 주차계산
      */
     @Test
     public void getWeek(){
         LocalDate date = LocalDate.of(2019, 11, 15);
-        WeekFields weekFields = WeekFields.of(Locale.getDefault());
-        int weekNumber = date.get(weekFields.weekOfMonth()) ;
+        int weekNumber = date.get(WeekFields.ISO.weekOfMonth()) ;
         System.out.println(weekNumber);
     }
 }
